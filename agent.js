@@ -1,5 +1,5 @@
-const fs = require("fs");
+import OpenClaw from "openclaw";
 
-setInterval(() => {
-  fs.appendFileSync("/workspace/log.txt", "Agent working...\n");
-}, 5000);
+// Start OpenClaw agent
+OpenClaw.start();
+console.log("OpenClaw agent running Yeh Brooooo!!!!!");
