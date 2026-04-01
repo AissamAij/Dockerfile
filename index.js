@@ -1,17 +1,6 @@
-# Use Node (or change if OpenClaw needs something else)
-FROM node:20
+console.log("OpenClaw agent is running...");
 
-# Create isolated workspace
-WORKDIR /workspace
+// Example: create a file inside workspace
+const fs = require("fs");
 
-# Copy your project files
-COPY . .
-
-# Install dependencies
-RUN npm install
-
-# (Optional) Install OpenClaw globally if needed
-# RUN npm install -g openclaw
-
-# Run your agent
-CMD ["node", "index.js"]
+fs.writeFileSync("/workspace/test.txt", "Hello from agent!");
