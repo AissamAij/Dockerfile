@@ -8,7 +8,7 @@ fs.writeFileSync("/workspace/test.txt", "Agent is working!");
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("OpenClaw agent is running 🚀");
+  res.end("OpenClaw agent is running ");
 });
 
 server.listen(PORT, () => {
