@@ -1,14 +1,18 @@
 const http = require("http");
-const fs = require("fs");
+const { exec } = require("child_process");
 
 const PORT = process.env.PORT || 8080;
 
-// Create test file inside workspace
-fs.writeFileSync("/workspace/test.txt", "Agent is working!");
+// Start your agent (example command)
+exec("node agent.js", (err) => {
+  if (err) {
+    console.error("Agent error:", err);
+  }
+});
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("OpenClaw agent is running ");
+  res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
+  res.end("Agent running in background ✅");
 });
 
 server.listen(PORT, () => {
